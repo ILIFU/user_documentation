@@ -102,7 +102,7 @@ To check the progress of the jobs, use the `squeue` command or check the `logs` 
 For an interative session on the SLURM cluster the `srun` command can be used as follows, from the SLURM login node:
 
 ```shell
-	$ srun --pty bash
+	$ srun --qos qos-interactive --pty bash
 ```
 
 This will place you in an interactive shell (bash) session on a compute node. The `--pty` parameter provides a psuedo-terminal which allows interactivity. The default resources allocated by the `srun` command are 1 task, 1 CPU and 8 GB RAM. Run the `srun --help` command to see additional parameters. Similar parameters to the sbatch script above can be used to define the resources allocated to your interactive session. From the shell session, you are able to run interactive tasks, such as opening a Singularity container and loading an interactive CASA session, or utilizing Nextflow.
